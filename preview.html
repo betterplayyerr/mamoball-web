@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Asociación Uruguaya de Mamoball</title>
+
+<style>
+
+body{
+font-family:Arial, sans-serif;
+background:#0b1220;
+color:white;
+margin:0;
+text-align:center;
+}
+
+.navbar{
+background:#020617;
+padding:15px;
+display:flex;
+justify-content:center;
+gap:30px;
+position:sticky;
+top:0;
+flex-wrap:wrap;
+}
+
+.navbar a{
+color:white;
+text-decoration:none;
+font-weight:bold;
+}
+
+.navbar a:hover{
+color:#22c55e;
+}
+
+header{
+background:#111827;
+padding:40px;
+}
+
+.section{
+margin:40px auto;
+max-width:1100px;
+background:#1f2937;
+padding:30px;
+border-radius:10px;
+}
+
+.card{
+background:#374151;
+padding:20px;
+border-radius:8px;
+margin:10px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+margin-top:20px;
+}
+
+.discord-btn{
+display:inline-block;
+margin-top:25px;
+padding:14px 24px;
+background:#5865F2;
+color:white;
+text-decoration:none;
+font-weight:bold;
+border-radius:8px;
+}
+
+.discord-btn:hover{
+background:#4752c4;
+}
+
+/* TABLA RANKING FIFA */
+
+.ranking-table{
+width:100%;
+border-collapse:collapse;
+margin-top:20px;
+animation:fadeIn 1.2s ease;
+}
+
+.ranking-table th{
+background:#111827;
+padding:12px;
+}
+
+.ranking-table td{
+padding:12px;
+border-bottom:1px solid #374151;
+}
+
+.ranking-table tr:hover{
+background:#2a3446;
+}
+
+.flag{
+font-size:20px;
+margin-right:8px;
+}
+
+.gold{color:#FFD700;}
+.silver{color:#C0C0C0;}
+.bronze{color:#cd7f32;}
+
+@keyframes fadeIn{
+from{opacity:0; transform:translateY(20px);}
+to{opacity:1; transform:translateY(0);}
+}
+
+footer{
+margin-top:40px;
+padding:20px;
+background:#111827;
+color:#9ca3af;
+}
+
+</style>
+</head>
+
+<body>
+
+<nav class="navbar">
+<a href="#inicio">Inicio ⏳</a>
+<a href="#noticias">Noticias 📰</a>
+<a href="#ranking">Ranking 📊</a>
+<a href="#rankingcsa">📊 Ranking CSA - Selección Uruguaya</a>
+<a href="#campeones">Equipos Campeones 🏆</a>
+<a href="#hof">Hall of Fame 🥇</a>
+<a href="#seleccion">Selección 🇺🇾</a>
+<a href="#calendario">Calendario 📅</a>
+<a href="#reglamento">Reglamento 📖</a>
+<a href="#trabajo">Trabaja con Nosotros 💼</a>
+</nav>
+
+<header>
+
+<h1 contenteditable="true">Asociación Uruguaya de Mamoball</h1>
+<p contenteditable="true">Liga Oficial de Mamoball en Uruguay</p>
+
+<a href="https://discord.gg/BQf4qHc99c" target="_blank" class="discord-btn">
+Unirse al Discord Oficial
+</a>
+
+</header>
+
+<div class="section" id="inicio">
+
+<h2>INICIO 🌬️</h2>
+
+<p contenteditable="true">
+La Asociación Uruguaya de Mamoball (AUM) gestiona las competiciones oficiales de Mamoball en Uruguay.
+</p>
+
+<p contenteditable="true">
+La liga reúne equipos competitivos, torneos internacionales y premios individuales.
+</p>
+
+</div>
+
+<div class="section" id="noticias">
+
+<h2>NOTICIAS 😯</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Inicio de Pre-temporada</h3>
+<p>La nueva pre-temporada comenzará próximamente.</p>
+</div>
+
+<div class="card">
+<h3>Mercado de Fichajes</h3>
+<p>Los equipos comienzan a reforzarse para la nueva liga.</p>
+</div>
+
+<div class="card">
+<h3>Torneos Internacionales</h3>
+<p>Defensor y Deportivo Maldonado jugarán Libertadores, mientras que Racing e Ituzaingó (Playoff) la Sudamericana.</p>
+</div>
+
+</div>
+
+</div>
+
+<div class="section" id="ranking">
+
+<h2>Ranking Oficial AUM</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>🥇 Nacional</h3>
+<p>1 Título</p>
+</div>
+
+<div class="card">
+<h3>🥈 ???</h3>
+<p>0 títulos</p>
+</div>
+
+<div class="card">
+<h3>🥉 ???</h3>
+<p>0 títulos</p>
+</div>
+
+</div>
+
+</div>
+
+<!-- RANKING CSA -->
+
+<div class="section" id="rankingcsa">
+
+<h2>📊 Ranking CSA - Selección</h2>
+
+<table class="ranking-table">
+
+<tr>
+<th>RK</th>
+<th>NT</th>
+<th>PTS</th>
+</tr>
+
+<tr class="gold">
+<td>🥇 1</td>
+<td><span class="flag">🇧🇷</span>Brasil</td>
+<td>572</td>
+</tr>
+
+<tr class="silver">
+<td>🥈 2</td>
+<td><span class="flag">🇺🇾</span>Uruguay</td>
+<td>447</td>
+</tr>
+
+<tr class="bronze">
+<td>🥉 3</td>
+<td><span class="flag">🇨🇱</span>Chile</td>
+<td>297</td>
+</tr>
+
+<tr>
+<td>4</td>
+<td>🇦🇷 Argentina</td>
+<td>288</td>
+</tr>
+
+<tr>
+<td>5</td>
+<td>🇧🇴 Bolivia</td>
+<td>144</td>
+</tr>
+
+<tr>
+<td>6</td>
+<td>🇵🇪 Perú</td>
+<td>144</td>
+</tr>
+
+<tr>
+<td>7</td>
+<td>🇵🇾 Paraguay</td>
+<td>140</td>
+</tr>
+
+<tr>
+<td>8</td>
+<td>🇨🇷 Costa Rica</td>
+<td>131</td>
+</tr>
+
+<tr>
+<td>9</td>
+<td>🇻🇪 Venezuela</td>
+<td>72</td>
+</tr>
+
+<tr>
+<td>10</td>
+<td>🇳🇮 Nicaragua</td>
+<td>71</td>
+</tr>
+
+<tr>
+<td>11</td>
+<td>🇨🇴 Colombia</td>
+<td>63</td>
+</tr>
+
+<tr>
+<td>12</td>
+<td>🇺🇸 EEUU</td>
+<td>21</td>
+</tr>
+
+<tr>
+<td>13</td>
+<td>🇪🇨 Ecuador</td>
+<td>21</td>
+</tr>
+
+<tr>
+<td>14</td>
+<td>🇲🇽 México</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>15</td>
+<td>🇸🇻 El Salvador</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>16</td>
+<td>🇬🇹 Guatemala</td>
+<td>0</td>
+</tr>
+
+</table>
+
+</div>
+
+<div class="section" id="trabajo">
+
+<h2>Trabaja con Nosotros</h2>
+
+<p>
+Si querés formar parte del staff de la AUM completá el formulario.
+</p>
+
+<a href="https://9q6tail8.forms.app/formulario-comunidad-aum" target="_blank" class="discord-btn">
+📝 Completar Formulario
+</a>
+
+</div>
+
+<footer>
+© Asociación Uruguaya de Mamoball
+</footer>
+
+</body>
+</html>
