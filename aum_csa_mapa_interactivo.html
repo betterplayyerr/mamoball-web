@@ -1,0 +1,331 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>AUM - Asociación Uruguaya de Mamoball</title>
+
+<style>
+
+body{
+font-family:Arial, sans-serif;
+background:#0b1220;
+color:white;
+margin:0;
+text-align:center;
+overflow-x:hidden;
+}
+
+/* INTRO */
+
+.intro{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:#020617;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:42px;
+font-weight:bold;
+letter-spacing:2px;
+animation:introFade 3s forwards;
+z-index:9999;
+}
+
+@keyframes introFade{
+0%{opacity:1}
+70%{opacity:1}
+100%{opacity:0; visibility:hidden}
+}
+
+/* NAVBAR */
+
+.navbar{
+background:#020617;
+padding:15px;
+display:flex;
+justify-content:center;
+gap:30px;
+position:sticky;
+top:0;
+flex-wrap:wrap;
+animation:slideDown 1s ease;
+}
+
+@keyframes slideDown{
+from{transform:translateY(-40px);opacity:0}
+to{transform:translateY(0);opacity:1}
+}
+
+.navbar a{
+color:white;
+text-decoration:none;
+font-weight:bold;
+}
+
+.navbar a:hover{
+color:#22c55e;
+}
+
+/* SECTIONS */
+
+.section{
+margin:40px auto;
+max-width:1100px;
+background:#1f2937;
+padding:30px;
+border-radius:10px;
+animation:fadeUp 1s ease;
+}
+
+@keyframes fadeUp{
+from{opacity:0; transform:translateY(30px)}
+to{opacity:1; transform:translateY(0)}
+}
+
+/* CARDS */
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+margin-top:20px;
+}
+
+.card{
+background:#374151;
+padding:20px;
+border-radius:8px;
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-6px);
+box-shadow:0 10px 25px rgba(0,0,0,.5);
+}
+
+/* RANKING */
+
+.ranking-table{
+width:100%;
+border-collapse:collapse;
+margin-top:20px;
+}
+
+.ranking-table th{
+background:#111827;
+padding:12px;
+}
+
+.ranking-table td{
+padding:12px;
+border-bottom:1px solid #374151;
+}
+
+/* GOLD BALL */
+
+.balon-oro{
+color:#FFD700;
+font-weight:bold;
+animation:goldGlow 2s infinite alternate;
+}
+
+@keyframes goldGlow{
+from{text-shadow:0 0 5px gold}
+to{text-shadow:0 0 25px gold}
+}
+
+/* MAP */
+
+.map-container{
+margin-top:50px;
+position:relative;
+}
+
+.map-container svg{
+width:100%;
+max-width:900px;
+}
+
+.country-point{
+cursor:pointer;
+transition:.3s;
+}
+
+.country-point:hover{
+transform:scale(1.4);
+}
+
+.tooltip{
+position:absolute;
+background:#111827;
+padding:10px 14px;
+border-radius:8px;
+font-size:14px;
+display:none;
+pointer-events:none;
+border:1px solid #374151;
+}
+
+/* FOOTER */
+
+footer{
+margin-top:40px;
+padding:20px;
+background:#111827;
+color:#9ca3af;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="intro">
+AUM • Confederación CSA
+</div>
+
+<nav class="navbar">
+<a href="#rankingcsa">📊 Ranking CSA</a>
+<a href="#hof">🥇 Hall Of Fame</a>
+</nav>
+
+<div class="section" id="rankingcsa">
+
+<h2>📊 Ranking CSA - Selección</h2>
+
+<table class="ranking-table">
+<tr><th>RK</th><th>NT</th><th>PTS</th></tr>
+<tr><td>🥇1</td><td>🇧🇷 Brasil</td><td>572</td></tr>
+<tr><td>🥈2</td><td>🇺🇾 Uruguay</td><td>447</td></tr>
+<tr><td>🥉3</td><td>🇨🇱 Chile</td><td>297</td></tr>
+<tr><td>4</td><td>🇦🇷 Argentina</td><td>288</td></tr>
+<tr><td>5</td><td>🇧🇴 Bolivia</td><td>144</td></tr>
+<tr><td>6</td><td>🇵🇪 Perú</td><td>144</td></tr>
+<tr><td>7</td><td>🇵🇾 Paraguay</td><td>140</td></tr>
+<tr><td>8</td><td>🇨🇷 Costa Rica</td><td>131</td></tr>
+<tr><td>9</td><td>🇻🇪 Venezuela</td><td>72</td></tr>
+<tr><td>10</td><td>🇳🇮 Nicaragua</td><td>71</td></tr>
+<tr><td>11</td><td>🇨🇴 Colombia</td><td>63</td></tr>
+<tr><td>12</td><td>🇺🇸 EEUU</td><td>21</td></tr>
+<tr><td>13</td><td>🇪🇨 Ecuador</td><td>21</td></tr>
+<tr><td>14</td><td>🇲🇽 México</td><td>0</td></tr>
+<tr><td>15</td><td>🇸🇻 El Salvador</td><td>0</td></tr>
+<tr><td>16</td><td>🇬🇹 Guatemala</td><td>0</td></tr>
+</table>
+
+<div class="map-container">
+
+<h2>🌎 Mapa Interactivo CSA</h2>
+
+<svg viewBox="0 0 900 500">
+
+<!-- Simple continent background -->
+<rect x="0" y="0" width="900" height="500" fill="#0f172a"></rect>
+
+<!-- Points -->
+<circle class="country-point" cx="500" cy="300" r="6" fill="yellow" data-info="🇧🇷 Brasil - 572 pts"></circle>
+<circle class="country-point" cx="510" cy="380" r="6" fill="white" data-info="🇺🇾 Uruguay - 447 pts"></circle>
+<circle class="country-point" cx="450" cy="360" r="6" fill="orange" data-info="🇨🇱 Chile - 297 pts"></circle>
+<circle class="country-point" cx="480" cy="350" r="6" fill="lightblue" data-info="🇦🇷 Argentina - 288 pts"></circle>
+<circle class="country-point" cx="480" cy="310" r="6" fill="white" data-info="🇧🇴 Bolivia - 144 pts"></circle>
+<circle class="country-point" cx="430" cy="300" r="6" fill="white" data-info="🇵🇪 Perú - 144 pts"></circle>
+<circle class="country-point" cx="510" cy="330" r="6" fill="white" data-info="🇵🇾 Paraguay - 140 pts"></circle>
+<circle class="country-point" cx="420" cy="230" r="6" fill="white" data-info="🇨🇴 Colombia - 63 pts"></circle>
+<circle class="country-point" cx="460" cy="220" r="6" fill="white" data-info="🇻🇪 Venezuela - 72 pts"></circle>
+<circle class="country-point" cx="380" cy="200" r="6" fill="white" data-info="🇨🇷 Costa Rica - 131 pts"></circle>
+<circle class="country-point" cx="370" cy="180" r="6" fill="white" data-info="🇳🇮 Nicaragua - 71 pts"></circle>
+<circle class="country-point" cx="340" cy="130" r="6" fill="white" data-info="🇺🇸 EEUU - 21 pts"></circle>
+<circle class="country-point" cx="430" cy="260" r="6" fill="white" data-info="🇪🇨 Ecuador - 21 pts"></circle>
+<circle class="country-point" cx="350" cy="150" r="6" fill="white" data-info="🇲🇽 México - 0 pts"></circle>
+<circle class="country-point" cx="360" cy="170" r="6" fill="white" data-info="🇸🇻 El Salvador - 0 pts"></circle>
+<circle class="country-point" cx="355" cy="165" r="6" fill="white" data-info="🇬🇹 Guatemala - 0 pts"></circle>
+
+</svg>
+
+<div class="tooltip" id="tooltip"></div>
+
+</div>
+
+</div>
+
+<div class="section" id="hof">
+
+<h2>Hall of Fame T1</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3 class="balon-oro">🏆 Balón de Oro</h3>
+<p>Park</p>
+</div>
+
+<div class="card">
+<h3>⚽ Bota de Oro</h3>
+<p>Park</p>
+</div>
+
+<div class="card">
+<h3>🎯 Máximo Asistidor</h3>
+<p>Park</p>
+</div>
+
+<div class="card">
+<h3>🛡 Pitbull de Oro</h3>
+<p>Byel</p>
+</div>
+
+<div class="card">
+<h3>🧤 Guante de Oro</h3>
+<p>Marinho</p>
+</div>
+
+<div class="card">
+<h3>🌟 Golden Boy</h3>
+<p>Park</p>
+</div>
+
+<div class="card">
+<h3>⭐ Equipo de la Temporada</h3>
+<p>Nacional</p>
+</div>
+
+</div>
+
+</div>
+
+<footer>
+© Asociación Uruguaya de Mamoball
+</footer>
+
+<script>
+
+const points=document.querySelectorAll(".country-point")
+const tooltip=document.getElementById("tooltip")
+
+points.forEach(p=>{
+
+p.addEventListener("mousemove",e=>{
+
+tooltip.style.display="block"
+tooltip.style.left=e.pageX+15+"px"
+tooltip.style.top=e.pageY+15+"px"
+tooltip.innerHTML=p.dataset.info
+
+})
+
+p.addEventListener("mouseleave",()=>{
+
+tooltip.style.display="none"
+
+})
+
+})
+
+</script>
+
+</body>
+</html>
